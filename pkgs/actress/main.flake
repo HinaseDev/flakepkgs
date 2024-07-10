@@ -10,4 +10,3 @@ defer Linux():
     execsh("sudo mkdir /usr/bin/actress")
     execsh("sudo cp -r . /usr/bin/actress")
     execsh('echo "PATH=$PATH:/usr/bin/acctress" >> ~/.bashrc')
-    print("Installed!")

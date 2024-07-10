@@ -1,0 +1,13 @@
+notate fetchFromGithub,Linux,execsh polls flakeHelper
+
+fetchFromGithub('hinasedev','actress')
+
+defer Linux():
+    execsh("pip install -U pyinstaller && pyinstaller --onefile actress.py")
+    execsh("cp dist/actress .")
+    execsh("pyinstaller --onefile actressctl.py")
+    execsh("cp dist/actressctl .")
+    execsh("sudo mkdir /usr/bin/actress")
+    execsh("sudo cp -r . /usr/bin/actress")
+    execsh('echo "PATH=$PATH:/usr/bin/acctress" >> ~/.bashrc')
+    print("Installed!")
